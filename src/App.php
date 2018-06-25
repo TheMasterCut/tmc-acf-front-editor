@@ -8,6 +8,7 @@ namespace tmc\acffe\src;
  */
 
 use shellpress\v1_2_5\ShellPress;
+use tmc\acffe\src\Components\FrontendTests;
 
 class App extends ShellPress {
 
@@ -17,6 +18,18 @@ class App extends ShellPress {
 	 * @return void
 	 */
 	protected function onSetUp() {
-		// TODO: Implement onSetUp() method.
+
+		//  ----------------------------------------
+		//  Definition
+		//  ----------------------------------------
+
+		$this::s()->autoloading->addNamespace( 'tmc\acffe', dirname( $this::s()->getMainPluginFile() ) );
+
+		//  ----------------------------------------
+		//  Components
+		//  ----------------------------------------
+
+		new FrontendTests( $this );
+
 	}
 }

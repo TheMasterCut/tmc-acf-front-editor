@@ -32,8 +32,9 @@ $requirementChecker = new ShellPress_RequirementChecker();
 
 $checkPHP   = $requirementChecker->checkPHPVersion( '5.3', 'ACF Front Editor TMC requires PHP version >= 5.3' );
 $checkWP    = $requirementChecker->checkWPVersion( '4.5', 'ACF Front Editor TMC requires WP version >= 4.3' );
+$checkACF   = $requirementChecker->checkClassExistance( 'acf', 'ACF Front Editor TMC requires Advanced Custom Fields plugin.' );
 
-if( ! $checkPHP || ! $checkWP ) return;
+if( ! $checkPHP || ! $checkWP || ! $checkACF ) return;
 
 //  ----------------------------------------
 //  ShellPress
